@@ -40,7 +40,7 @@ app.post("/",function(req,res){
         auth: "anyname:"+ appiKey
     }
 
-    const requestt = https.request(url,options,function(response){
+    const request = https.request(url,options,function(response){
 
       if (response.statusCode === 200){
         res.sendFile(__dirname + "/success.html");
@@ -53,8 +53,8 @@ app.post("/",function(req,res){
         })
     })
 
-    requestt.write(jsonData);
-    requestt.end();
+    request.write(jsonData);
+    request.end();
 
 })
 
